@@ -4,9 +4,9 @@
 ## Funcionalidades
 - Agregar, editar y eliminar tareas
 - Persistencia de los datos en el navegador
-- Completar tarea <small><em>(en desarrollo)</em></small>
+- Completar tarea <h6>(En desarrollo)</h6>
 
-#Tecnologias
+# Tecnologias
 - Javascript
 - HTML
 - Tailwind

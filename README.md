@@ -4,7 +4,7 @@
 ## Funcionalidades
 - Agregar, editar y eliminar tareas
 - Persistencia de los datos en el navegador
-- Completar tarea <e>(en desarrollo)</e>
+- Completar tarea <em>(en desarrollo)</em>
 
 #Tecnologias
 - Javascript

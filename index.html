@@ -8,13 +8,13 @@
 </head>
 <body class="font-sans flex items-center justify-center min-h-screen">
 
-    <div class="m-5 w-full max-w-xl border-2 p-10 rounded-xl shadow-sm">
+    <div class="m-5 border-2 w-full max-w-xl p-10 rounded-xl shadow-lg">
         <h2 class="text-6xl text-center text-blue-400 font-bold">TO DO</h2>
 
         <input type="text" id="new-task" placeholder="Enter task.." class="border-2 rounded-md p-5 mt-9 w-full">
-        <button onclick="createTask()" class="bg-blue-400 text-white p-2 rounded-md w-full mt-2">Add task</button>
+        <button onclick="createTask()" class="bg-blue-400 text-white py-5 rounded-md w-full mt-2">Add task</button>
 
-        <div class="card mt-10 border-2 border-gray p-4 rounded-md shadow-md">
+        <div class="card mt-5 border-2 border-gray p-4 rounded-md shadow-md">
             <h4 class="text-sm text-gray-400 mb-4 flex">task list</h4>
             <hr>
             <ul id="task-list" class="overflow-y-auto h-64"></ul>

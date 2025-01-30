@@ -1,24 +1,28 @@
-// Initialize main variable
-
 const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-//Display tasks
+
 const displayTask = () => {
     const taskList = document.getElementById('task-list');
     taskList.innerHTML = '';
 
     tasks.forEach((task, index) => {
         taskList.innerHTML += `
-            <li class='mb-5'>
-                ${task}
-                <button class="ml-5 bg-blue-300 text-white p-2 rounded-md" onclick='editTask(${index})'>edit</button>
-                <button class="bg-red-300 text-white p-2 rounded-md" onclick='deleteTask(${index})'>delete</button>
-            </li>
+            <li class='grid grid-cols-2 p-5 items-center'>
+                <div class='task'>${task}</div>
+                <div class='buttons'>
+                    <button class="ml-5 border-2 text-white p-2 rounded-md" onclick='editTask(${index})'>✏️</button>
+
+                    <button class="text-white border-2 p-2 rounded-md" onclick='deleteTask(${index})'>❌</button>
+
+                    <button class="ml-5 border-2 text-white p-2 rounded-md">✅</button>
+                </div>
+            </li><hr>
         `;
     });
+
+    taskList.scrollTop = taskList.scrollHeight;
 }
 
-// Create task
 const createTask = () => {
     const newTask = document.getElementById('new-task').value;
     document.getElementById('new-task').value = '';
@@ -30,15 +34,12 @@ const createTask = () => {
     }
 }
 
-// Enter event for create button
 document.getElementById('new-task').addEventListener('keydown', (event) => {
     if(event.key === 'Enter'){
         createTask();
     }
 });
 
-
-// Edit task
 const editTask = (index) => {
     const updatedTask = prompt("Edit task: ", tasks[index]);
 
@@ -49,16 +50,20 @@ const editTask = (index) => {
     }
 }
 
-// Delete task
 const deleteTask = (index) => {
-    tasks.splice(index, 1);
-    saveTask();
-    displayTask();
+    if(confirm('Estas seguro que quieres eliminar esta tarea?')){
+        tasks.splice(index, 1);
+        saveTask();
+        displayTask();   
+    }
 }
 
-// Save task
 const saveTask = () => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 displayTask();
+
+const completeTask = () => {
+
+}
